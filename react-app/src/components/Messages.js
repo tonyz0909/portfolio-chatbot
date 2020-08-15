@@ -10,7 +10,7 @@ function Messages(props) {
         messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
 
-    useEffect(scrollToBottom, [props.messages]);
+    useEffect(scrollToBottom, [props.messages, props.isLoading]);
 
     return (
         <div className="message-display">

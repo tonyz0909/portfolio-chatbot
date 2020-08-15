@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Container from 'react-bootstrap/Container';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from '@material-ui/core/Container';
 
 import ChatBar from './components/ChatBar';
 import Messages from './components/Messages';
@@ -13,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <Container>
+    <Container maxWidth="xs" fixed>
       <div className="chatbox">
         <ChatBar/>
         <div className="content">

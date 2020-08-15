@@ -3,7 +3,7 @@ var router = express.Router();
 const { Wit, log } = require('node-wit');
 
 const client = new Wit({
-    accessToken: 'HTYIMZNUKQV7XZWSA2QFZTZBXIBQHWNW',
+    accessToken: process.env.ACCESS_TOKEN,
     logger: new log.Logger(log.DEBUG) // optional
 });
 
@@ -13,7 +13,7 @@ router.post('/query', function (req, res, next) {
     let response = "";
     client.message(req.body.message, {})
         .then((data) => {
-            response = process(data.entities); // TODO: make into a promise
+            response = getResponse(data.entities); // TODO: make into a promise
             res.send(response);
         })
         .catch(err => {
@@ -24,7 +24,7 @@ router.post('/query', function (req, res, next) {
         });
 });
 
-let process = (witData) => {
+let getResponse = (witData) => {
     console.log(witData);
     if ('greetings' in witData && !('bye' in witData)) {
         let num = Math.random()

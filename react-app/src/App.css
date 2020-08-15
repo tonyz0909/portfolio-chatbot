@@ -1,41 +1,41 @@
 .chatbox {
   margin-top:10%;
-  margin-left:20%;
-  margin-right:20%;
+  margin-left:25%;
+  margin-right:25%;
   border:1px solid grey;
   border-radius:4px;
-  overflow:auto;
 }
 
-.content {
+/* .content {
   padding:1em;
-}
+} */
 
 .form-control {
   margin-bottom:1em;
 }
 
 .name {
-  padding:1em;
+  /* padding:1em; */
   font-weight:bold;
 }
 
 .message-display {
   height:50vh;
+  padding:1em;
   overflow-y:scroll;
 }
 
 .speech-bubble-left {
 	position: relative;
-	background: #9ad3e1;
-  border-radius: .4em;
-  padding: 0.4em 0.5em 0.4em 0.5em;
+	background: #f0eeec;
+  border-radius: 0.9em 0.9em 0.9em 0.2em;
+  padding: 0.4em 0.7em 0.4em 0.7em;
   margin: 0.5em;
-  margin-left: 1.5em;
-  margin-bottom: 1em;
+  /* margin-left: 1.5em;
+  margin-bottom: 1em; */
 }
 
-.speech-bubble-left:after {
+/* .speech-bubble-left:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -43,25 +43,26 @@
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-right-color: #9ad3e1;
+	border-right-color: #f0eeec;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -10px;
 	margin-left: -20px;
-}
+} */
 
 .speech-bubble-right {
 	position: relative;
-	background: #f2a335;
-  border-radius: .4em;
-  padding: 0.4em 0.5em 0.4em 0.5em;
+  background: #3f51b5;
+  color: white;
+  border-radius: 0.9em 0.9em 0.2em 0.9em;
+  padding: 0.4em 0.7em 0.4em 0.7em;
   margin: 0.5em;
-  margin-right: 1.5em;
+  /* margin-right: 1.5em; */
   margin-left: auto;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 }
 
-.speech-bubble-right:after {
+/* .speech-bubble-right:after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -69,12 +70,12 @@
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-left-color: #f2a335;
+	border-left-color: #3f51b5;
 	border-right: 0;
 	border-bottom: 0;
 	margin-top: -10px;
 	margin-right: -20px;
-}
+} */
 
 .msgContainer {
   display: flex;
@@ -83,4 +84,75 @@
 .title {
   border-bottom: 1px solid grey;
   background: #9ad3e1;
+}
+
+.text-input-row {
+  padding: 1em;
+  border-top: 1px solid #f2f0ee;
+}
+
+@keyframes blink {
+  /**
+   * At the start of the animation the dot
+   * has an opacity of .2
+   */
+  0% {
+    opacity: .2;
+  }
+  /**
+   * At 20% the dot is fully visible and
+   * then fades out slowly
+   */
+  20% {
+    opacity: .8;
+  }
+  /**
+   * Until it reaches an opacity of .2 and
+   * the animation can start again
+   */
+  100% {
+    opacity: .2;
+  }
+}
+
+.loading span {
+  /**
+   * Use the blink animation, which is defined above
+   */
+  animation-name: blink;
+  /**
+   * The animation should take 1.4 seconds
+   */
+  animation-duration: 1.4s;
+  /**
+   * It will repeat itself forever
+   */
+  animation-iteration-count: infinite;
+  /**
+   * This makes sure that the starting style (opacity: .2)
+   * of the animation is applied before the animation starts.
+   * Otherwise we would see a short flash or would have
+   * to set the default styling of the dots to the same
+   * as the animation. Same applies for the ending styles.
+   */
+  animation-fill-mode: both;
+  /* font-size:2em; */
+}
+
+.loading span:nth-child(2) {
+  /**
+   * Starts the animation of the third dot
+   * with a delay of .2s, otherwise all dots
+   * would animate at the same time
+   */
+  animation-delay: .2s;
+}
+
+.loading span:nth-child(3) {
+  /**
+   * Starts the animation of the third dot
+   * with a delay of .4s, otherwise all dots
+   * would animate at the same time
+   */
+  animation-delay: .4s;
 }

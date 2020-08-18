@@ -40,12 +40,12 @@ let getResponse = (witData) => {
             if ('frontend' in witData) {
                 return "My frontend experience includes HTML/CSS, React.js, Angular.js, and Bootstrap!";
             } else if ('backend' in witData) {
-                return "My backend experience includes Java, Python, MongoDB, and MySQL!"
+                return "My backend experience includes Java, Python, PHP, MongoDB, and MySQL!"
             } else {
-                return "My skills include HTML/CSS, React.js, Angular.js, Bootstrap, Java, Python, MongoDB, and MySQL"
+                return "I have experience in HTML/CSS, React.js, Angular.js, Bootstrap, Java, Python, PHP, MongoDB, and MySQL"
             }
         } else if (intent == 'get_education') {
-            return "I am currently a junior Computer Science major at Georgia Tech, with a concentration in People and Artificial Intelligence. I am part of the Honors Program, and also actively involved in intramural sports and computer science clubs outside my classes."
+            return "I am currently a senior Computer Science major at Georgia Tech, with a concentration in People and Artificial Intelligence. I am part of the Honors Program, and also actively involved in intramural sports and computer science clubs outside my classes."
         } else if (intent == 'get_internships') {
             if ('Amazon' in witData) {
                 return "At Amazon, I worked on the Alexa engineering team. I designed and implemented a PHP script that programmatically reduced the complexity of Amazon Alexa’s natural language generation templates by 7%. I also expanded Amazon Alexa’s ability to generate cross-topic answers."
@@ -71,6 +71,8 @@ let getResponse = (witData) => {
                 return "Lunch buddy is a mobile application that matches users with a “buddy” to eat lunch with based on their preferences and schedule. I used React Native and implemented Facebook authentication, Messenger integration, Firebase integration, and push notifications"
             } else if ('Google_glass' in witData) {
                 return "I developed a Google glass application prototype that provides real-time localization and optimization of sparse order picking paths for warehouse navigation. I also performed a user study that compared various sparse order picking methods using heads-up displays"
+            } else if ('React' in witData) {
+                return "This chatbot was actually created using React! Some other projects created using React include volunteer management system and lunch buddy. Ask about any of these projects to learn more!"
             } else {
                 return "Some of my previous projects include: volunteer management system, spl.it, youtube sentiment analyzer, meal tracker, and sparse order picking. Ask about any of these projects to learn more!";
             }
@@ -79,7 +81,7 @@ let getResponse = (witData) => {
         } else if (intent == 'get_hobbies') {
             return "Some of my hobbies include playing the piano, playing tennis and exploring the outdoors/photography. I also recently started skating this summer after getting my first longboard."
         } else if (intent == 'get_info') {
-            return "I'm a junior Computer Science major at Georgia Tech. As a visual learner, I enjoy the process of creating and designing applications and interfaces, and this website is a result of my interests. I have experience in web design (React and Angular) and RESTFUL APIs, and I am currently taking classes to further my knowledge in automation and machine learning."
+            return "I'm a senior Computer Science major at Georgia Tech. As a visual learner, I enjoy the process of creating and designing applications and interfaces, and this website is a result of my interests. I have experience in web design (React and Angular) and RESTFUL APIs, and I am currently taking classes to further my knowledge in automation and machine learning."
         } else if (intent == 'get_thanks') {
             return "thank you!"
         } else if (intent == 'greet') {

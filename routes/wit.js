@@ -25,16 +25,8 @@ router.post('/query', function (req, res, next) {
 });
 
 let getResponse = (witData) => {
-    console.log(witData);
-    if ('greetings' in witData && !('bye' in witData)) {
-        let num = Math.random()
-        if (num < 0.25) return "Hi!"
-        else return "Hello!"
-    } else if ('bye' in witData) {
-        let num = Math.random()
-        if (num < 0.5) return "It has been a pleasure talking to you! Bye!";
-        else return "Thanks for chatting!"
-    } else if ('intent' in witData) {
+    // console.log(witData);
+    if ('intent' in witData) {
         let intent = witData.intent[0].value;
         if (intent == 'get_skills') {
             if ('frontend' in witData) {
@@ -85,8 +77,18 @@ let getResponse = (witData) => {
         } else if (intent == 'get_thanks') {
             return "thank you!"
         } else if (intent == 'greet') {
-            return "sup bro"
+            let num = Math.random()
+            if (num < 0.25) return "Hi!"
+            else return "Hello!"
         }
+    } else if ('greetings' in witData && !('bye' in witData)) {
+        let num = Math.random()
+        if (num < 0.25) return "Hi!"
+        else return "Hello!"
+    } else if ('bye' in witData) {
+        let num = Math.random()
+        if (num < 0.5) return "It has been a pleasure talking to you! Bye!";
+        else return "Thanks for chatting!"
     } else {
         return 'Sorry, I did not understand your command. Try asking me things like "what frontend skills do you have?", or type "help" for a list of things you can ask me about';
     }
